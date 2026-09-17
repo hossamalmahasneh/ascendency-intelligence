@@ -1,0 +1,9 @@
+create extension if not exists pgcrypto;
+create table if not exists organizations(id uuid primary key default gen_random_uuid(), name text not null, created_at timestamptz default now());
+create table if not exists assessments(id uuid primary key default gen_random_uuid(), organization_id uuid references organizations(id), name text not null, status text default 'draft', created_at timestamptz default now());
+create table if not exists domains(id uuid primary key default gen_random_uuid(), assessment_id uuid references assessments(id) on delete cascade, code text, name text not null);
+create table if not exists criteria(id uuid primary key default gen_random_uuid(), domain_id uuid references domains(id) on delete cascade, code text, title text not null, question text not null, weight numeric default 1);
+create table if not exists evidence(id uuid primary key default gen_random_uuid(), assessment_id uuid references assessments(id) on delete cascade, filename text not null, storage_path text, extracted_text text, created_at timestamptz default now());
+create table if not exists findings(id uuid primary key default gen_random_uuid(), criterion_id uuid references criteria(id), ai_score int check(ai_score between 1 and 5), ai_status text, confidence numeric, rationale text, citations jsonb default '[]', human_score int check(human_score between 1 and 5), human_status text, reviewer_note text, validated_at timestamptz);
+create table if not exists actions(id uuid primary key default gen_random_uuid(), finding_id uuid references findings(id), title text not null, priority text, owner text, due_date date, status text default 'open');
+create table if not exists audit_log(id bigserial primary key, actor text, action text not null, entity_type text, entity_id text, payload jsonb, created_at timestamptz default now());
