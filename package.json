@@ -1,0 +1,1 @@
+{"name":"ascendency-intelligence","version":"0.3.0","private":true,"type":"module","scripts":{"dev":"vite --host 0.0.0.0","build":"vite build","start":"vite preview --host 0.0.0.0 --port ${PORT:-4173}"},"dependencies":{"@vitejs/plugin-react":"latest","vite":"latest","react":"latest","react-dom":"latest","lucide-react":"latest","recharts":"latest"},"devDependencies":{}}
