@@ -1,0 +1,25 @@
+{
+  "name": "Enterprise Digital Maturity Framework",
+  "source_note": "Anonymized demonstration framework derived from prior assessment methodology; no organization identifiers retained.",
+  "maturity_levels": {"1":"Initial","2":"Under Development","3":"Established","4":"Managed","5":"Optimized"},
+  "domains": [
+    {"id":"ea","name":"Enterprise Architecture","criteria":[
+      {"id":"ea1","title":"Architecture Governance","question":"Is enterprise architecture governed through defined roles, decision rights, standards and review mechanisms?"},
+      {"id":"ea2","title":"Strategy Alignment","question":"Are architecture decisions demonstrably aligned with enterprise strategy and transformation priorities?"},
+      {"id":"ea3","title":"Stakeholder Engagement","question":"Are business and technology stakeholders systematically involved in architecture decisions?"},
+      {"id":"ea4","title":"Architecture Repository","question":"Are architecture artifacts organized, current, controlled and reusable?"}]},
+    {"id":"infra","name":"Digital Infrastructure","criteria":[
+      {"id":"di1","title":"Infrastructure Governance","question":"Are infrastructure standards, ownership and lifecycle controls formally defined?"},
+      {"id":"di2","title":"Availability & Resilience","question":"Is resilience supported by documented continuity, redundancy, monitoring and recovery evidence?"},
+      {"id":"di3","title":"Asset & Configuration Management","question":"Are technology assets and configurations inventoried, owned and maintained?"}]},
+    {"id":"services","name":"Digital Services","criteria":[
+      {"id":"ds1","title":"Service Governance","question":"Are digital services managed through defined ownership, lifecycle and performance controls?"},
+      {"id":"ds2","title":"User-Centric Design","question":"Is user research and service feedback evidenced in service design and improvement?"},
+      {"id":"ds3","title":"Service Measurement","question":"Are service performance and quality monitored using defined indicators?"}]},
+    {"id":"cyber","name":"Cybersecurity","criteria":[
+      {"id":"cs1","title":"Security Governance","question":"Are information-security roles, policies, risk processes and governance mechanisms documented?"},
+      {"id":"cs2","title":"Technical Controls","question":"Are security controls evidenced across networks, endpoints, servers and applications?"},
+      {"id":"cs3","title":"Vulnerability & Threat Management","question":"Are vulnerabilities and threats identified, prioritized, remediated and monitored?"},
+      {"id":"cs4","title":"Continuous Improvement","question":"Are security assessments, audits and remediation activities repeated and governed?"}]}
+  ]
+}
